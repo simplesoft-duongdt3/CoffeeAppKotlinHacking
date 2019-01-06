@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="60dp">
+
+    <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_bottom_main_tab_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/ic_tab_home"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/iv_bottom_main_tab_locate"/>
+
+    <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_bottom_main_tab_locate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/iv_bottom_main_tab_home"
+            app:layout_constraintTop_toTopOf="@id/iv_bottom_main_tab_home"
+            app:layout_constraintLeft_toRightOf="@id/iv_bottom_main_tab_home"
+            app:layout_constraintRight_toLeftOf="@id/iv_bottom_main_tab_cart"
+            app:srcCompat="@drawable/ic_tab_locate"/>
+
+    <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_bottom_main_tab_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/iv_bottom_main_tab_home"
+            app:layout_constraintBottom_toBottomOf="@id/iv_bottom_main_tab_home"
+            app:layout_constraintLeft_toRightOf="@id/iv_bottom_main_tab_locate"
+            app:layout_constraintRight_toLeftOf="@id/iv_bottom_main_tab_profile"
+            app:srcCompat="@drawable/ic_tab_cart"/>
+
+    <TextView
+            android:id="@+id/tv_bottom_main_tab_items_in_cart"
+            android:layout_width="@dimen/size_items_in_cart"
+            android:layout_height="@dimen/size_items_in_cart"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintCircleAngle="45"
+            app:layout_constraintCircleRadius="12dp"
+            android:textSize="@dimen/text_size_items_in_cart"
+            android:background="@drawable/bg_items_in_cart"
+            android:textColor="@android:color/white"
+            app:layout_constraintCircle="@+id/iv_bottom_main_tab_cart"
+            tools:visibility="visible"
+            tools:text="10"/>
+
+    <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_bottom_main_tab_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/iv_bottom_main_tab_home"
+            app:layout_constraintBottom_toBottomOf="@id/iv_bottom_main_tab_home"
+            app:layout_constraintLeft_toRightOf="@id/iv_bottom_main_tab_cart"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@drawable/ic_tab_profile"/>
+
+</android.support.constraint.ConstraintLayout>

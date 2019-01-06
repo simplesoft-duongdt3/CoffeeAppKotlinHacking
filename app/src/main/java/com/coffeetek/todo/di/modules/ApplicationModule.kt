@@ -40,6 +40,6 @@ open class ApplicationModule {
     }
 
     companion object {
-        private const val PRE_NAME = "pref_trader"
+        private const val PRE_NAME = "pref_coffee_tek"
     }
 }
