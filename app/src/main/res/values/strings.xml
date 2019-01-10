@@ -4,4 +4,10 @@
     <string name="all_login">Login</string>
     <string name="fragment_onboarding_connect_with_facebook">Connect with Facebook</string>
     <string name="fragment_onboarding_slogans">Get the best coffee in town!</string>
+    <string name="fragment_login_welcome_back">Welcome back!</string>
+    <string name="all_hint_email">Email</string>
+    <string name="all_hint_password">Password</string>
+    <string name="fragment_login_forgot_password">Forgot password?</string>
+    <string name="all_log_in">Login In</string>
+    <string name="fragment_login_not_have_an_account_register">Don’t have an account? Register</string>
 </resources>

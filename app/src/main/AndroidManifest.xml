@@ -31,6 +31,8 @@
         <activity android:name=".feature.main.MainActivity"/>
 
         <activity android:name=".feature.onboarding.OnBoardingActivity"/>
+
+        <activity android:name=".feature.login.LoginActivity"/>
     </application>
 
 </manifest>

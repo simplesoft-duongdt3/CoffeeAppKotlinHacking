@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_above="@+id/bottom_main_tab_view"
-            android:background="#B98068"/>
+            android:background="@color/colorPrimary"/>
 
     <com.coffeetek.todo.feature.main.bottommaintab.BottomMainTabView
             android:id="@+id/bottom_main_tab_view"

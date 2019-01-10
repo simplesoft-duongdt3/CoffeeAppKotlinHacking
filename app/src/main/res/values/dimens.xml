@@ -2,10 +2,23 @@
 <resources>
     <dimen name="text_size_items_in_cart">8sp</dimen>
     <dimen name="size_items_in_cart">15dp</dimen>
+
     <dimen name="padding_bottom_main_tab_view">18dp</dimen>
-    <dimen name="text_size_fragment_onboarding_14sp">14sp</dimen>
-    <dimen name="margin_fragment_onboarding_20dp">20dp</dimen>
-    <dimen name="margin_fragment_onboarding_10dp">10dp</dimen>
-    <dimen name="min_height_fragment_onboarding_btn">45dp</dimen>
+
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+
+    <dimen name="all_padding_10dp">10dp</dimen>
+
+    <dimen name="all_margin_20dp">20dp</dimen>
+    <dimen name="all_margin_10dp">10dp</dimen>
+    <dimen name="all_margin_30dp">30dp</dimen>
+    <dimen name="all_margin_50dp">50dp</dimen>
+
+    <dimen name="all_min_height_button">50dp</dimen>
+    <dimen name="all_min_height_60dp">60dp</dimen>
+
     <dimen name="text_size_fragment_onboarding_slogans">32sp</dimen>
+    <dimen name="text_size_fragment_login_32sp">32sp</dimen>
+
 </resources>

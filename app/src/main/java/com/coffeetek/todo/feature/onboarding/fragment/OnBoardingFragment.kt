@@ -5,6 +5,7 @@ import android.view.View
 import butterknife.OnClick
 import com.coffeetek.todo.R
 import com.coffeetek.todo.base.ui.BaseFragment
+import com.coffeetek.todo.feature.login.LoginActivity
 import com.coffeetek.todo.feature.main.MainActivity
 import javax.inject.Inject
 
@@ -47,7 +48,7 @@ class OnBoardingFragment : BaseFragment(), OnBoardingFragmentContract.View {
 
     @OnClick(R.id.tv_fragment_onboarding_login)
     fun onClickLogin() {
-        MainActivity.start(context)
+        LoginActivity.start(context)
     }
 
     @OnClick(R.id.rl_fragment_onboarding_btn_facebook)

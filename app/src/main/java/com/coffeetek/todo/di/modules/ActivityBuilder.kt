@@ -1,5 +1,7 @@
 package com.coffeetek.todo.di.modules
 
+import com.coffeetek.todo.feature.login.LoginActivity
+import com.coffeetek.todo.feature.login.fragment.LoginFragmentProvider
 import com.coffeetek.todo.feature.main.MainActivity
 import com.coffeetek.todo.feature.onboarding.OnBoardingActivity
 import com.coffeetek.todo.feature.onboarding.OnBoardingActivityModule
@@ -17,6 +19,9 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = [OnBoardingActivityModule::class, OnBoardingFragmentProvider::class])
     internal abstract fun bindOnBoarding(): OnBoardingActivity
+
+    @ContributesAndroidInjector(modules = [LoginFragmentProvider::class])
+    internal abstract fun bindMLoginActivity(): LoginActivity
 
     @ContributesAndroidInjector()
     internal abstract fun bindMainActivity(): MainActivity
