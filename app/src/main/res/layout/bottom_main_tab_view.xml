@@ -9,8 +9,9 @@
 
     <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iv_bottom_main_tab_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="@dimen/padding_bottom_main_tab_view"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:srcCompat="@drawable/ic_tab_home"
@@ -19,8 +20,9 @@
 
     <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iv_bottom_main_tab_locate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="@dimen/padding_bottom_main_tab_view"
             app:layout_constraintBottom_toBottomOf="@id/iv_bottom_main_tab_home"
             app:layout_constraintTop_toTopOf="@id/iv_bottom_main_tab_home"
             app:layout_constraintLeft_toRightOf="@id/iv_bottom_main_tab_home"
@@ -29,8 +31,9 @@
 
     <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iv_bottom_main_tab_cart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="@dimen/padding_bottom_main_tab_view"
             app:layout_constraintTop_toTopOf="@id/iv_bottom_main_tab_home"
             app:layout_constraintBottom_toBottomOf="@id/iv_bottom_main_tab_home"
             app:layout_constraintLeft_toRightOf="@id/iv_bottom_main_tab_locate"
@@ -54,8 +57,9 @@
 
     <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iv_bottom_main_tab_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="@dimen/padding_bottom_main_tab_view"
             app:layout_constraintTop_toTopOf="@id/iv_bottom_main_tab_home"
             app:layout_constraintBottom_toBottomOf="@id/iv_bottom_main_tab_home"
             app:layout_constraintLeft_toRightOf="@id/iv_bottom_main_tab_cart"

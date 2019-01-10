@@ -3,7 +3,7 @@ package com.coffeetek.todo.feature.splash
 import android.os.Bundle
 import com.coffeetek.todo.R
 import com.coffeetek.todo.base.ui.BaseActivity
-import com.coffeetek.todo.feature.main.MainActivity
+import com.coffeetek.todo.feature.onboarding.OnBoardingActivity
 import javax.inject.Inject
 
 /**
@@ -11,7 +11,7 @@ import javax.inject.Inject
  */
 class SplashActivity : BaseActivity(), SplashActivityContract.View {
     override fun gotoMainScreen() {
-        MainActivity.start(this)
+        OnBoardingActivity.start(this)
         finish()
     }
 

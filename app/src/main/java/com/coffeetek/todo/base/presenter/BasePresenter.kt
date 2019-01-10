@@ -26,6 +26,11 @@ abstract class BasePresenter<V : Contract.IView> : Contract.IPresenter<V> {
         this.useCases = Arrays.asList<UseCase<*, *>>(*useCases)
     }
 
+    constructor(view: V) {
+        setView(view)
+        this.useCases = emptyList()
+    }
+
     override fun onResume() {
 
     }

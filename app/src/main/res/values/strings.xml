@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CoffeeTek</string>
+    <string name="all_register">Register</string>
+    <string name="all_login">Login</string>
+    <string name="fragment_onboarding_connect_with_facebook">Connect with Facebook</string>
+    <string name="fragment_onboarding_slogans">Get the best coffee in town!</string>
 </resources>
