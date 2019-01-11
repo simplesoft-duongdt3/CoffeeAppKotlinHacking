@@ -30,13 +30,13 @@ class BottomMainTabView : BaseLayout, IBottomMainTabView {
 
     private val onBottomMainTabListener: OnBottomMainTabListener? = null
 
-    override fun getTabHome(): AppCompatImageView = iv_bottom_main_tab_home
+    override fun getTabHome(): AppCompatImageView = ivBottomMainTabHome
 
-    override fun getTabLocate(): AppCompatImageView = iv_bottom_main_tab_locate
+    override fun getTabLocate(): AppCompatImageView = ivBottomMainTabLocate
 
-    override fun getTabCart(): AppCompatImageView = iv_bottom_main_tab_cart
+    override fun getTabCart(): AppCompatImageView = ivBottomMainTabCart
 
-    override fun getTabProfile(): AppCompatImageView = iv_bottom_main_tab_profile
+    override fun getTabProfile(): AppCompatImageView = ivBottomMainTabProfile
 
     override fun getOnBottomMainTabListener(): OnBottomMainTabListener? {
         return onBottomMainTabListener

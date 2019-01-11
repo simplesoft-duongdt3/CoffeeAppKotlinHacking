@@ -2,9 +2,9 @@ package com.coffeetek.todo.feature.login.fragment
 
 import android.os.Bundle
 import android.view.View
-import butterknife.OnClick
 import com.coffeetek.todo.R
 import com.coffeetek.todo.base.ui.BaseFragment
+import kotlinx.android.synthetic.main.fragment_login.*
 import javax.inject.Inject
 
 /**
@@ -32,15 +32,10 @@ class LoginFragment : BaseFragment(), LoginFragmentContract.View {
     }
 
     override fun initEvent() {
-
+        ivFragmentLoginBack.setOnClickListener { activity?.finish() }
     }
 
     override fun initData(savedInstanceState: Bundle?) {
 
-    }
-
-    @OnClick(R.id.iv_fragment_login_back)
-    fun onClickBack() {
-        activity?.finish()
     }
 }

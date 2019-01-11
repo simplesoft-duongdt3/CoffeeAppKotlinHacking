@@ -16,7 +16,7 @@ class LoginActivity : BaseActivity() {
 
     override fun initView(savedInstanceState: Bundle?) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fl_activity_login_content, LoginFragment.newInstance())
+            .replace(R.id.flActivityLoginContent, LoginFragment.newInstance())
             .commit()
     }
 

@@ -2,14 +2,10 @@ package com.coffeetek.todo.base.ui
 
 import android.os.Bundle
 import android.view.MenuItem
-
-import butterknife.ButterKnife
-import butterknife.Unbinder
 import dagger.android.support.DaggerAppCompatActivity
 
 
 abstract class BaseActivity : DaggerAppCompatActivity() {
-    private var unbinder: Unbinder? = null
 
     abstract val layoutId: Int
 
@@ -17,7 +13,6 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(layoutId)
-        unbinder = ButterKnife.bind(this)
 
         initView(savedInstanceState)
         initData()
@@ -37,12 +32,5 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
             android.R.id.home -> finish()
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        if (unbinder != null) {
-            unbinder!!.unbind()
-        }
     }
 }

@@ -21,7 +21,7 @@ class OnBoardingActivity : BaseActivity(), OnBoardingActivityContract.View {
 
     override fun initView(savedInstanceState: Bundle?) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fl_activity_on_boarding_content, OnBoardingFragment.newInstance())
+            .replace(R.id.flActivityOnBoardingContent, OnBoardingFragment.newInstance())
             .commit()
     }
 

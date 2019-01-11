@@ -8,19 +8,19 @@
         tools:context=".feature.main.MainActivity">
 
     <FrameLayout
-            android:id="@+id/fl_activity_main_content"
+            android:id="@+id/flActivityMainContent"
             android:layout_width="match_parent"
-            android:layout_above="@+id/bottom_main_tab_view"
+            android:layout_above="@+id/bottomMainTabView"
             android:layout_height="match_parent"/>
 
     <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:layout_above="@+id/bottom_main_tab_view"
+            android:layout_above="@+id/bottomMainTabView"
             android:background="@color/colorPrimary"/>
 
     <com.coffeetek.todo.feature.main.bottommaintab.BottomMainTabView
-            android:id="@+id/bottom_main_tab_view"
+            android:id="@+id/bottomMainTabView"
             android:layout_width="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_height="wrap_content"/>

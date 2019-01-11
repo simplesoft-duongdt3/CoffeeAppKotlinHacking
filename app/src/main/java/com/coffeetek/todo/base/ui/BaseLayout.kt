@@ -6,7 +6,6 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.RelativeLayout
-import butterknife.ButterKnife
 
 abstract class BaseLayout : RelativeLayout {
     private lateinit var rootCustomView: View
@@ -40,8 +39,6 @@ abstract class BaseLayout : RelativeLayout {
         val inflater = LayoutInflater.from(context)
 
         rootCustomView = inflater.inflate(contentView, this, true)
-
-        ButterKnife.bind(this, rootCustomView)
 
         obtainAttributeValues(context, attrs)
 

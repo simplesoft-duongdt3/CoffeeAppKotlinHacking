@@ -2,11 +2,11 @@ package com.coffeetek.todo.feature.onboarding.fragment
 
 import android.os.Bundle
 import android.view.View
-import butterknife.OnClick
 import com.coffeetek.todo.R
 import com.coffeetek.todo.base.ui.BaseFragment
 import com.coffeetek.todo.feature.login.LoginActivity
 import com.coffeetek.todo.feature.main.MainActivity
+import kotlinx.android.synthetic.main.fragment_onboarding.*
 import javax.inject.Inject
 
 /**
@@ -30,7 +30,9 @@ class OnBoardingFragment : BaseFragment(), OnBoardingFragmentContract.View {
         get() = R.layout.fragment_onboarding
 
     override fun initView(view: View?) {
-
+        tvFragmentOnBoardingRegister.setOnClickListener { MainActivity.start(context) }
+        tvFragmentOnBoardingLogin.setOnClickListener { LoginActivity.start(context) }
+        rlFragmentOnBoardingBtnFacebook.setOnClickListener { MainActivity.start(context) }
     }
 
     override fun initEvent() {
@@ -39,20 +41,5 @@ class OnBoardingFragment : BaseFragment(), OnBoardingFragmentContract.View {
 
     override fun initData(savedInstanceState: Bundle?) {
 
-    }
-
-    @OnClick(R.id.tv_fragment_onboarding_register)
-    fun onClickRegister() {
-        MainActivity.start(context)
-    }
-
-    @OnClick(R.id.tv_fragment_onboarding_login)
-    fun onClickLogin() {
-        LoginActivity.start(context)
-    }
-
-    @OnClick(R.id.rl_fragment_onboarding_btn_facebook)
-    fun onClickConnectWithFaceBook() {
-        MainActivity.start(context)
     }
 }

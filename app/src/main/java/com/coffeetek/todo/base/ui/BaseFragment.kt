@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import butterknife.ButterKnife
 import dagger.android.support.DaggerFragment
 
 abstract class BaseFragment : DaggerFragment() {
@@ -16,7 +14,6 @@ abstract class BaseFragment : DaggerFragment() {
         var view = view
         if (view == null) {
             view = inflater.inflate(contentView, container, false)
-            ButterKnife.bind(this, view!!)
         }
         return view
     }

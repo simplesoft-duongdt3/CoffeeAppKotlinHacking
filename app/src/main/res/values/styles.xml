@@ -62,7 +62,7 @@
         <item name="android:textColorHint">#4B5461</item>
         <item name="android:minHeight">@dimen/all_min_height_60dp</item>
         <item name="android:textSize">@dimen/text_size_18sp</item>
-        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
     </style>
 
 </resources>

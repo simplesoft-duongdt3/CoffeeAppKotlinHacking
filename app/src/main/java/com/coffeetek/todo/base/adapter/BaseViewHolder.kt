@@ -6,8 +6,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
-import butterknife.ButterKnife
-
 abstract class BaseViewHolder<D>(parent: ViewGroup, @LayoutRes res: Int) :
     RecyclerView.ViewHolder(LayoutInflater.from(parent.context).inflate(res, parent, false)) {
 
@@ -15,7 +13,7 @@ abstract class BaseViewHolder<D>(parent: ViewGroup, @LayoutRes res: Int) :
         get() = itemView.context
 
     init {
-        ButterKnife.bind(this, itemView)
+
     }
 
     abstract fun setData(itemViewModel: D, position: Int)

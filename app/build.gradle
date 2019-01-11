@@ -61,9 +61,6 @@ dependencies {
     implementation presentationDependencies.glide
     kapt presentationDependencies.glideCompiler
 
-    implementation presentationDependencies.butterknife
-    kapt presentationDependencies.butterknifeCompiler
-
     implementation globalDependencies.mapstruct
     kapt globalDependencies.mapstructProcessor
 }
