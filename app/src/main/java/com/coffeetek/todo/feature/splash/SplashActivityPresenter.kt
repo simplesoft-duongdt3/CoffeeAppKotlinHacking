@@ -1,4 +1,4 @@
-package com.coffeetek.todo.feature.flash
+package com.coffeetek.todo.feature.splash
 
 import com.coffeetek.todo.base.presenter.BasePresenter
 import com.huynh.xinh.domain.interactor.OutputObserver
@@ -9,10 +9,10 @@ import javax.inject.Inject
 /**
  * Create by Mr.X on 12/25/18
  */
-class FlashActivityPresenter
-@Inject constructor(view: FlashActivityContract.View, private val getMetaData: GetMetaData) :
-    BasePresenter<FlashActivityContract.View>(view, getMetaData),
-    FlashActivityContract.Presenter {
+class SplashActivityPresenter
+@Inject constructor(view: SplashActivityContract.View, private val getMetaData: GetMetaData) :
+    BasePresenter<SplashActivityContract.View>(view, getMetaData),
+    SplashActivityContract.Presenter {
     override fun loadMetaData() {
         getMetaData.execute(object : OutputObserver<MetaData>() {
             override fun onNext(t: MetaData) {

@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun start(context: Context) {
+        fun start(context: Context?) {
             val starter = Intent(context, MainActivity::class.java)
-            context.startActivity(starter)
+            context?.startActivity(starter)
         }
     }
 }

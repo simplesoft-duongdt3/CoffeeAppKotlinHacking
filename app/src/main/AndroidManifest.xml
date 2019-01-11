@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.coffeetek.todo">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -13,9 +14,12 @@
             android:name=".CoffeeTekApplication"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            tools:targetApi="n">
 
-        <activity android:name=".feature.flash.FlashActivity">
+        <activity
+                android:name=".feature.splash.SplashActivity"
+                android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
@@ -25,6 +29,10 @@
         </activity>
 
         <activity android:name=".feature.main.MainActivity"/>
+
+        <activity android:name=".feature.onboarding.OnBoardingActivity"/>
+
+        <activity android:name=".feature.login.LoginActivity"/>
     </application>
 
 </manifest>

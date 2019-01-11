@@ -1,17 +1,17 @@
-package com.coffeetek.todo.feature.flash
+package com.coffeetek.todo.feature.splash
 
 import android.os.Bundle
 import com.coffeetek.todo.R
 import com.coffeetek.todo.base.ui.BaseActivity
-import com.coffeetek.todo.feature.main.MainActivity
+import com.coffeetek.todo.feature.onboarding.OnBoardingActivity
 import javax.inject.Inject
 
 /**
  * Create by Mr.X on 12/25/18
  */
-class FlashActivity : BaseActivity(), FlashActivityContract.View {
+class SplashActivity : BaseActivity(), SplashActivityContract.View {
     override fun gotoMainScreen() {
-        MainActivity.start(this)
+        OnBoardingActivity.start(this)
         finish()
     }
 
@@ -20,10 +20,10 @@ class FlashActivity : BaseActivity(), FlashActivityContract.View {
     }
 
     @Inject
-    internal lateinit var presenter: FlashActivityContract.Presenter
+    internal lateinit var presenter: SplashActivityContract.Presenter
 
     override val layoutId: Int
-        get() = R.layout.activity_flash
+        get() = R.layout.activity_splash
 
     override fun initView(savedInstanceState: Bundle?) {
 

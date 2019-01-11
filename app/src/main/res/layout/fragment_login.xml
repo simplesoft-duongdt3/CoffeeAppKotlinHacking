@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:background="@android:color/white"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBarFragmentLogin"
+            style="@style/CustomToolbar">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivFragmentLoginBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="@dimen/all_padding_10dp"
+                android:minWidth="?attr/actionBarSize"
+                android:minHeight="?attr/actionBarSize"
+                app:srcCompat="@drawable/all_ic_back_24dp"/>
+
+        <TextView
+                style="@style/ToolbarTitle"
+                android:layout_marginEnd="?attr/actionBarSize"
+                android:text="@string/all_login"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/all_margin_20dp"
+            android:layout_marginEnd="@dimen/all_margin_20dp"
+            android:layout_marginTop="@dimen/all_margin_30dp">
+
+        <TextView
+                android:id="@+id/tvFragmentLoginWelcomeBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size_fragment_login_32sp"
+                android:text="@string/fragment_login_welcome_back"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutFragmentLoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/all_margin_30dp"
+                android:gravity="center"
+                android:theme="@style/TextInputLayoutAppearance"
+                app:layout_constraintTop_toBottomOf="@id/tvFragmentLoginWelcomeBack">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtFragmentLoginEmail"
+                    style="@style/TextInputEditText"
+                    android:hint="@string/all_hint_email"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutFragmentLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/all_margin_30dp"
+                android:gravity="center"
+                android:theme="@style/TextInputLayoutAppearance"
+                app:passwordToggleEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayoutFragmentLoginEmail">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtFragmentLoginPassword"
+                    style="@style/TextInputEditText"
+                    android:inputType="textPassword"
+                    android:hint="@string/all_hint_password"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+                android:id="@+id/tvFragmentLoginForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayoutFragmentLoginPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_14sp"
+                android:layout_marginTop="@dimen/all_margin_10dp"
+                android:text="@string/fragment_login_forgot_password"/>
+
+        <TextView
+                android:id="@+id/tvFragmentLoginBtnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/all_margin_50dp"
+                android:minHeight="@dimen/all_min_height_button"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_14sp"
+                android:background="@drawable/bg_fragment_onboarding_register"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/tvFragmentLoginForgotPassword"
+                android:text="@string/all_log_in"/>
+
+        <TextView
+                android:id="@+id/tvFragmentLoginRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/all_margin_10dp"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintTop_toBottomOf="@id/tvFragmentLoginBtnLogin"
+                android:text="@string/fragment_login_not_have_an_account_register"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
