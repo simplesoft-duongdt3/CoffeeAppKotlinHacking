@@ -3,6 +3,7 @@ package com.coffeetek.todo.di.modules
 import com.coffeetek.todo.feature.login.LoginActivity
 import com.coffeetek.todo.feature.login.fragment.LoginFragmentProvider
 import com.coffeetek.todo.feature.main.MainActivity
+import com.coffeetek.todo.feature.map.MapFragmentProvider
 import com.coffeetek.todo.feature.onboarding.OnBoardingActivity
 import com.coffeetek.todo.feature.onboarding.OnBoardingActivityModule
 import com.coffeetek.todo.feature.onboarding.fragment.OnBoardingFragmentProvider
@@ -23,7 +24,7 @@ abstract class ActivityBuilder {
     @ContributesAndroidInjector(modules = [LoginFragmentProvider::class])
     internal abstract fun bindMLoginActivity(): LoginActivity
 
-    @ContributesAndroidInjector()
+    @ContributesAndroidInjector(modules = [MapFragmentProvider::class])
     internal abstract fun bindMainActivity(): MainActivity
 
 }

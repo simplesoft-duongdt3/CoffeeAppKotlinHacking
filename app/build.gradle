@@ -48,6 +48,8 @@ dependencies {
     implementation presentationDependencies.contraintLayout
     implementation presentationDependencies.multidex
 
+    implementation presentationDependencies.googleMap
+
     implementation presentationDependencies.rxKotlin
     implementation presentationDependencies.rxAndroid
     compileOnly presentationDependencies.javaxAnnotation

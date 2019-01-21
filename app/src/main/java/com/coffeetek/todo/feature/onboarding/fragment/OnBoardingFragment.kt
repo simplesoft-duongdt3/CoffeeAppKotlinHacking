@@ -42,4 +42,10 @@ class OnBoardingFragment : BaseFragment(), OnBoardingFragmentContract.View {
     override fun initData(savedInstanceState: Bundle?) {
 
     }
+
+    override fun onDestroy() {
+        presenter.onDestroy()
+
+        super.onDestroy()
+    }
 }

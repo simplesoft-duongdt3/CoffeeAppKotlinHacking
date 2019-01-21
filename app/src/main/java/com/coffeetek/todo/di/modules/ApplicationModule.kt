@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.coffeetek.todo.CoffeeTekApplication
 import com.coffeetek.todo.UiThread
+import com.coffeetek.todo.feature.metadata.IMetaDataManager
+import com.coffeetek.todo.feature.metadata.MetaDataManager
 import com.huynh.xinh.data.executor.JobExecutor
 import com.huynh.xinh.domain.executor.PostExecutionThread
 import com.huynh.xinh.domain.executor.ThreadExecutor
@@ -37,6 +39,12 @@ open class ApplicationModule {
     @Singleton
     internal fun provideSharedPreferences(application: Application): SharedPreferences {
         return application.getSharedPreferences(PRE_NAME, Context.MODE_PRIVATE)
+    }
+
+    @Provides
+    @Singleton
+    internal fun provideMetaDataManager(metaDataManager: MetaDataManager): IMetaDataManager {
+        return metaDataManager
     }
 
     companion object {

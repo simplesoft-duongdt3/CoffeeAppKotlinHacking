@@ -29,6 +29,12 @@ class OnBoardingActivity : BaseActivity(), OnBoardingActivityContract.View {
 
     }
 
+    override fun onDestroy() {
+        presenter.onDestroy()
+
+        super.onDestroy()
+    }
+
     companion object {
         fun start(context: Context) {
             val starter = Intent(context, OnBoardingActivity::class.java)

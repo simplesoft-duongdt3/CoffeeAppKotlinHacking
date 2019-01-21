@@ -38,4 +38,10 @@ class LoginFragment : BaseFragment(), LoginFragmentContract.View {
     override fun initData(savedInstanceState: Bundle?) {
 
     }
+
+    override fun onDestroy() {
+        presenter.onDestroy()
+
+        super.onDestroy()
+    }
 }

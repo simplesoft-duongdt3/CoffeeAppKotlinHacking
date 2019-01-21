@@ -28,7 +28,7 @@ class BottomMainTabView : BaseLayout, IBottomMainTabView {
 
     private lateinit var bottomMainTabState: BottomMainTabState
 
-    private val onBottomMainTabListener: OnBottomMainTabListener? = null
+    private var onBottomMainTabListener: OnBottomMainTabListener? = null
 
     override fun getTabHome(): AppCompatImageView = ivBottomMainTabHome
 
@@ -40,6 +40,10 @@ class BottomMainTabView : BaseLayout, IBottomMainTabView {
 
     override fun getOnBottomMainTabListener(): OnBottomMainTabListener? {
         return onBottomMainTabListener
+    }
+
+    fun setOnBottomMainTabListener(onBottomMainTabListener: OnBottomMainTabListener) {
+        this.onBottomMainTabListener = onBottomMainTabListener
     }
 
     override val contentView: Int
