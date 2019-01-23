@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="@dimen/all_min_height_60dp">
+        android:minHeight="@dimen/all_min_height_50dp">
 
     <android.support.v7.widget.AppCompatImageView
             android:id="@+id/ivBottomMainTabHome"

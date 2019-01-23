@@ -9,9 +9,12 @@ interface MapFragmentContract {
 
     interface View : Contract.IView {
         fun showMarker(mapViewModels: List<MarkerViewModel>)
+        fun showStoreInfo(storeViewModel: StoreViewModel)
     }
 
     interface Presenter : Contract.IPresenter<View> {
         fun renderMarker()
+
+        fun getStoreInfo(markerViewModel: MarkerViewModel)
     }
 }

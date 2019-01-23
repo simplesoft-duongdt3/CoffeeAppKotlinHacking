@@ -1,6 +1,5 @@
 package com.coffeetek.todo.feature.map
 
-import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.os.Bundle
@@ -22,7 +21,7 @@ import javax.inject.Inject
 class MapFragment : BaseFragment(), MapFragmentContract.View, OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private var googleMap: GoogleMap? = null
-    var prevMarker: Marker? = null
+    private var prevMarker: Marker? = null
 
     @Inject
     internal lateinit var presenter: MapFragmentContract.Presenter
@@ -34,6 +33,10 @@ class MapFragment : BaseFragment(), MapFragmentContract.View, OnMapReadyCallback
             fragment.arguments = args
             return fragment
         }
+    }
+
+    override fun showStoreInfo(storeViewModel: StoreViewModel) {
+        BottomSheetStoreInfo.newInstance(storeViewModel).show(childFragmentManager, "BottomSheetStoreInfo")
     }
 
     override val contentView: Int
@@ -61,18 +64,19 @@ class MapFragment : BaseFragment(), MapFragmentContract.View, OnMapReadyCallback
     }
 
     override fun onMarkerClick(marker: Marker?): Boolean {
-
         unSelectedMarker(prevMarker)
         selectedMarker(marker)
 
         prevMarker = marker
+
+        presenter.getStoreInfo(marker?.tag as MarkerViewModel)
 
         return true
     }
 
     private fun selectedMarker(marker: Marker?) {
         val markerViewModel = marker?.tag as MarkerViewModel
-        marker.setIcon(createIconMarker(context, markerViewModel.iconMarkerSelected))
+        marker.setIcon(createIconMarker(markerViewModel.iconMarkerSelected))
     }
 
     private fun unSelectedMarker(marker: Marker?) {
@@ -81,7 +85,7 @@ class MapFragment : BaseFragment(), MapFragmentContract.View, OnMapReadyCallback
         }
 
         val markerViewModel = marker.tag as MarkerViewModel
-        marker.setIcon(createIconMarker(context, markerViewModel.iconMarker))
+        marker.setIcon(createIconMarker(markerViewModel.iconMarker))
     }
 
     override fun showMarker(mapViewModels: List<MarkerViewModel>) {
@@ -99,20 +103,20 @@ class MapFragment : BaseFragment(), MapFragmentContract.View, OnMapReadyCallback
         }
         val bounds = builder.build()
 
-        val cu = CameraUpdateFactory.newLatLngBounds(bounds, 50)
+        val cu = CameraUpdateFactory.newLatLngBounds(bounds, 90)
         googleMap?.animateCamera(cu)
     }
 
     private fun addMarker(markerViewModel: MarkerViewModel) {
         val markerOptions = MarkerOptions()
             .position(markerViewModel.latLng)
-            .icon(createIconMarker(context, markerViewModel.iconMarker))
+            .icon(createIconMarker(markerViewModel.iconMarker))
 
         val marker = googleMap?.addMarker(markerOptions)
         marker?.tag = markerViewModel
     }
 
-    private fun createIconMarker(context: Context?, iconMarker: Int): BitmapDescriptor? {
+    private fun createIconMarker(iconMarker: Int): BitmapDescriptor? {
         val vectorDrawable = ContextCompat.getDrawable(context!!, iconMarker)
         vectorDrawable?.setBounds(0, 0, vectorDrawable.intrinsicWidth, vectorDrawable.intrinsicHeight)
         val bitmap = Bitmap.createBitmap(

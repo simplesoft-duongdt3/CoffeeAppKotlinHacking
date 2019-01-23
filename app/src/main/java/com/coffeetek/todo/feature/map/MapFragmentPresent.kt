@@ -16,6 +16,27 @@ class MapFragmentPresent
 ) :
     BasePresenter<MapFragmentContract.View>(view), MapFragmentContract.Presenter {
 
+    private val mapPresenterViewModel = MapPresenterViewModel()
+
+    override fun getStoreInfo(markerViewModel: MarkerViewModel) {
+        val id = markerViewModel.id ?: 0
+
+        val store = getStoreById(1)
+
+        val name = store?.name ?: ""
+        val mockMinDistance = 4.23
+        val mockMinTime = 20.0
+        val addressName = store?.address?.name ?: ""
+
+        val storeViewModel = StoreViewModel(id, name, mockMinDistance, mockMinTime, addressName)
+
+        getView()?.showStoreInfo(storeViewModel)
+    }
+
+    private fun getStoreById(id: Long): Store? {
+        return mapPresenterViewModel.stores?.find { it.id == id }
+    }
+
     override fun renderMarker() {
         getView()?.showMarker(MapFragmentMapper.toMapViewModels(getNearestStores()))
     }
@@ -23,7 +44,9 @@ class MapFragmentPresent
     private fun getNearestStores(): List<Store> {
         val categories: List<Category> = metaDataManager.getMetaData().categories ?: emptyList()
         if (categories.isNotEmpty()) {
-            return categories[0].stores ?: emptyList()
+            mapPresenterViewModel.stores = categories[0].stores ?: emptyList()
+
+            return mapPresenterViewModel.stores ?: emptyList()
         }
         return emptyList()
     }

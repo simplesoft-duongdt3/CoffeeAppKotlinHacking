@@ -6,4 +6,7 @@
 
     <color name="colorApp">#B98068</color>
     <color name="color_connect_with_facebook">#4277BC</color>
+
+    <color name="color_bottom_sheet_map">#2D140D</color>
+    <color name="color_text_bottom_sheet_map">#514644</color>
 </resources>
