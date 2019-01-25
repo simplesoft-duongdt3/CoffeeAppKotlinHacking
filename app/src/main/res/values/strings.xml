@@ -7,9 +7,13 @@
     <string name="fragment_login_welcome_back">Welcome back!</string>
     <string name="all_hint_email">Email</string>
     <string name="all_hint_password">Password</string>
-    <string name="fragment_login_forgot_password">Forgot password?</string>
-    <string name="all_log_in">Login In</string>
+    <string name="all_forgot_password">Forgot password?</string>
+    <string name="all_log_in">Login in</string>
     <string name="fragment_login_not_have_an_account_register">Don’t have an account? Register</string>
-    <string name="bottom_sheet_fragment_map_view_menu">View Menu</string>
+    <string name="bottom_sheet_fragment_map_view_menu">View menu</string>
     <string name="all_address">Address</string>
+    <string name="fragment_register_welcome">Welcome!</string>
+    <string name="fragment_register_have_an_account_login">Have an account? Login</string>
+    <string name="all_sign_up">Sign up</string>
+    <string name="all_hint_re_password">Re-Password</string>
 </resources>

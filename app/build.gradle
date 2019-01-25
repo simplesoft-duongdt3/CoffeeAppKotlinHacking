@@ -69,4 +69,6 @@ dependencies {
 
     implementation globalDependencies.mapstruct
     kapt globalDependencies.mapstructProcessor
+
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
 }

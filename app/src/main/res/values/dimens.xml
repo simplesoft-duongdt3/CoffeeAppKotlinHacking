@@ -10,6 +10,7 @@
     <dimen name="text_size_17sp">17sp</dimen>
     <dimen name="text_size_18sp">18sp</dimen>
     <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_32sp">32sp</dimen>
 
     <dimen name="all_padding_10dp">10dp</dimen>
 
@@ -17,13 +18,13 @@
     <dimen name="all_margin_20dp">20dp</dimen>
     <dimen name="all_margin_10dp">10dp</dimen>
     <dimen name="all_margin_30dp">30dp</dimen>
+    <dimen name="all_margin_40dp">40dp</dimen>
     <dimen name="all_margin_50dp">50dp</dimen>
 
     <dimen name="all_min_height_50dp">50dp</dimen>
     <dimen name="all_min_height_60dp">60dp</dimen>
 
     <dimen name="text_size_fragment_onboarding_slogans">32sp</dimen>
-    <dimen name="text_size_fragment_login_32sp">32sp</dimen>
 
     <dimen name="bottom_sheet_corner_radius">16dp</dimen>
     <dimen name="bottom_sheet_top_padding">8dp</dimen>

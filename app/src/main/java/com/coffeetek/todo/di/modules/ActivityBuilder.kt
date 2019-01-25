@@ -7,6 +7,8 @@ import com.coffeetek.todo.feature.map.MapFragmentProvider
 import com.coffeetek.todo.feature.onboarding.OnBoardingActivity
 import com.coffeetek.todo.feature.onboarding.OnBoardingActivityModule
 import com.coffeetek.todo.feature.onboarding.fragment.OnBoardingFragmentProvider
+import com.coffeetek.todo.feature.register.RegisterActivity
+import com.coffeetek.todo.feature.register.RegisterFragmentProvider
 import com.coffeetek.todo.feature.splash.SplashActivity
 import com.coffeetek.todo.feature.splash.SplashActivityModule
 import dagger.Module
@@ -22,7 +24,10 @@ abstract class ActivityBuilder {
     internal abstract fun bindOnBoarding(): OnBoardingActivity
 
     @ContributesAndroidInjector(modules = [LoginFragmentProvider::class])
-    internal abstract fun bindMLoginActivity(): LoginActivity
+    internal abstract fun bindLoginActivity(): LoginActivity
+
+    @ContributesAndroidInjector(modules = [RegisterFragmentProvider::class])
+    internal abstract fun bindRegisterActivity(): RegisterActivity
 
     @ContributesAndroidInjector(modules = [MapFragmentProvider::class])
     internal abstract fun bindMainActivity(): MainActivity
