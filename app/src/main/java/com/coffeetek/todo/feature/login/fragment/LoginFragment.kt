@@ -57,16 +57,24 @@ class LoginFragment : BaseFragment(), LoginFragmentContract.View {
         MainActivity.start(context)
     }
 
-    override fun showEmailInValidError(message: String) {
-        textInputLayoutFragmentLoginEmail.error = message
+    override fun showEmailInValidError() {
+        textInputLayoutFragmentLoginEmail.error = getString(R.string.all_email_invalid)
+    }
+
+    override fun showEmailRequiredError() {
+        textInputLayoutFragmentLoginEmail.error = getString(R.string.all_field_required)
     }
 
     override fun hideEmailInValidError() {
         textInputLayoutFragmentLoginEmail.error = null
     }
 
-    override fun showPasswordInValid(message: String) {
-        textInputLayoutFragmentLoginPassword.error = message
+    override fun showPasswordInValid() {
+        textInputLayoutFragmentLoginPassword.error = getString(R.string.all_password_invalid)
+    }
+
+    override fun showPasswordRequiredError() {
+        textInputLayoutFragmentLoginPassword.error = getString(R.string.all_field_required)
     }
 
     override fun hidePasswordInValidError() {

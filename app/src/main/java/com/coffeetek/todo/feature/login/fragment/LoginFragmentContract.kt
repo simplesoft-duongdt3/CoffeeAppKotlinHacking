@@ -8,9 +8,11 @@ import com.coffeetek.todo.base.presenter.Contract
 interface LoginFragmentContract {
 
     interface View : Contract.IView {
-        fun showEmailInValidError(message: String)
+        fun showEmailInValidError()
+        fun showEmailRequiredError()
         fun hideEmailInValidError()
-        fun showPasswordInValid(message: String)
+        fun showPasswordInValid()
+        fun showPasswordRequiredError()
         fun hidePasswordInValidError()
         fun onLoginSuccess()
     }

@@ -4,7 +4,7 @@ import com.huynh.xinh.domain.executor.PostExecutionThread
 import com.huynh.xinh.domain.executor.ThreadExecutor
 import com.huynh.xinh.domain.interactor.UseCase
 import com.huynh.xinh.domain.models.MetaData
-import com.huynh.xinh.domain.repositories.FlashRepository
+import com.huynh.xinh.domain.repositories.flash.FlashRepository
 import io.reactivex.Observable
 import javax.inject.Inject
 
@@ -17,7 +17,7 @@ class GetMetaData
     private val repository: FlashRepository
 ) : UseCase<MetaData, Void>(threadExecutor, postExecutionThread) {
 
-    override fun buildUseCaseObservable(params: Void?): Observable<MetaData> {
-        return repository.getMetaData
+    override fun buildUseCaseObservable(param: Void?): Observable<MetaData> {
+        return repository.getMetaData()
     }
 }

@@ -2,7 +2,7 @@ package com.huynh.xinh.data.responses.flash
 
 import com.huynh.xinh.data.responses.flash.cloud.SplashApi
 import com.huynh.xinh.domain.models.MetaData
-import com.huynh.xinh.domain.repositories.FlashRepository
+import com.huynh.xinh.domain.repositories.flash.FlashRepository
 import io.reactivex.Observable
 import org.mapstruct.factory.Mappers
 import javax.inject.Inject
@@ -13,8 +13,9 @@ import javax.inject.Inject
 class SplashRepositoryImpl
 @Inject constructor(private val splashApi: SplashApi) : FlashRepository {
 
-    override val getMetaData: Observable<MetaData>
-        get() = splashApi.getMetaData.map { metadataDto ->
+    override fun getMetaData(): Observable<MetaData> {
+        return splashApi.getMetaData.map { metadataDto ->
             Mappers.getMapper(SplashMapper::class.java).toMetaData(metadataDto)
         }
+    }
 }
