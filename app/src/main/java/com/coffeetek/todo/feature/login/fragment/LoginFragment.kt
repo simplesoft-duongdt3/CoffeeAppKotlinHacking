@@ -1,12 +1,10 @@
 package com.coffeetek.todo.feature.login.fragment
 
 import android.os.Bundle
-import android.support.design.widget.TextInputEditText
-import android.text.Editable
 import android.view.View
 import com.coffeetek.todo.R
-import com.coffeetek.todo.SimpleTextWatcher
 import com.coffeetek.todo.base.ui.BaseFragment
+import com.coffeetek.todo.extensions.afterTextChanged
 import com.coffeetek.todo.feature.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_login.*
 import javax.inject.Inject
@@ -38,8 +36,8 @@ class LoginFragment : BaseFragment(), LoginFragmentContract.View {
     override fun initEvent() {
         ivFragmentLoginBack.setOnClickListener { activity?.finish() }
 
-        edtFragmentLoginEmail.afterTextChanged { hideEmailInValidError() }
-        edtFragmentLoginPassword.afterTextChanged { hidePasswordInValidError() }
+        edtFragmentLoginEmail.afterTextChanged { hideEmailError() }
+        edtFragmentLoginPassword.afterTextChanged { hidePasswordError() }
 
         tvFragmentLoginBtnLogin.setOnClickListener {
             presenter.login(
@@ -65,7 +63,7 @@ class LoginFragment : BaseFragment(), LoginFragmentContract.View {
         textInputLayoutFragmentLoginEmail.error = getString(R.string.all_field_required)
     }
 
-    override fun hideEmailInValidError() {
+    override fun hideEmailError() {
         textInputLayoutFragmentLoginEmail.error = null
     }
 
@@ -77,16 +75,8 @@ class LoginFragment : BaseFragment(), LoginFragmentContract.View {
         textInputLayoutFragmentLoginPassword.error = getString(R.string.all_field_required)
     }
 
-    override fun hidePasswordInValidError() {
+    override fun hidePasswordError() {
         textInputLayoutFragmentLoginPassword.error = null
-    }
-
-    private fun TextInputEditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
-        this.addTextChangedListener(object : SimpleTextWatcher() {
-            override fun afterTextChanged(editable: Editable?) {
-                afterTextChanged.invoke(editable.toString())
-            }
-        })
     }
 
     override fun onDestroy() {

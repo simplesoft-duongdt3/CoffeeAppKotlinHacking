@@ -10,10 +10,12 @@ interface LoginFragmentContract {
     interface View : Contract.IView {
         fun showEmailInValidError()
         fun showEmailRequiredError()
-        fun hideEmailInValidError()
+        fun hideEmailError()
+
         fun showPasswordInValid()
         fun showPasswordRequiredError()
-        fun hidePasswordInValidError()
+        fun hidePasswordError()
+
         fun onLoginSuccess()
     }
 

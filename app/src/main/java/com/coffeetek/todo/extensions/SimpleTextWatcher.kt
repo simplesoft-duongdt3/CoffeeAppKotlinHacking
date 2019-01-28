@@ -1,4 +1,4 @@
-package com.coffeetek.todo
+package com.coffeetek.todo.extensions
 
 import android.text.TextWatcher
 

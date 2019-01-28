@@ -8,8 +8,22 @@ import com.coffeetek.todo.base.presenter.Contract
 interface RegisterFragmentContract {
 
     interface View : Contract.IView {
+        fun showEmailInValidError()
+        fun showEmailRequiredError()
+        fun hideEmailError()
+
+        fun showPasswordInValid()
+        fun showPasswordRequiredError()
+        fun hidePasswordError()
+
+        fun showRePasswordRequiredError()
+        fun showRePasswordNotMatchError()
+        fun hideRePasswordError()
+
+        fun onRegisterSuccess()
     }
 
     interface Presenter : Contract.IPresenter<View> {
+        fun register(registerRawInfo: RegisterRawInfo)
     }
 }

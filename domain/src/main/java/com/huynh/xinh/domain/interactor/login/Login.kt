@@ -3,9 +3,9 @@ package com.huynh.xinh.domain.interactor.login
 import com.huynh.xinh.domain.executor.PostExecutionThread
 import com.huynh.xinh.domain.executor.ThreadExecutor
 import com.huynh.xinh.domain.interactor.UseCase
-import com.huynh.xinh.domain.repositories.user.LoginParam
-import com.huynh.xinh.domain.repositories.user.LoginResult
 import com.huynh.xinh.domain.repositories.user.UserRepository
+import com.huynh.xinh.domain.repositories.user.login.LoginParam
+import com.huynh.xinh.domain.repositories.user.login.LoginResult
 import com.huynh.xinh.domain.validation.ValidationResult
 import com.huynh.xinh.domain.validation.errors.ValidationError
 import com.huynh.xinh.domain.validation.validators.EmailValidator

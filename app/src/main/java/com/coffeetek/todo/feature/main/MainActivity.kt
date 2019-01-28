@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(), OnBottomMainTabListener {
     override fun onClickTabHome() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun onClickTabLocate() {
@@ -21,11 +21,11 @@ class MainActivity : BaseActivity(), OnBottomMainTabListener {
     }
 
     override fun onClickTabCart() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun onClickTabProfile() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     private lateinit var mapFragment: MapFragment

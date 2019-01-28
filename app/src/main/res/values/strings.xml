@@ -19,4 +19,5 @@
     <string name="all_email_invalid">Email invalid</string>
     <string name="all_field_required">Field required</string>
     <string name="all_password_invalid">Password invalid</string>
+    <string name="fragment_register_password_not_match_error">Password not match</string>
 </resources>
