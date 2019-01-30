@@ -7,8 +7,6 @@ import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
-
-
 class CoffeeTekApplication : DaggerApplication() {
 
     override fun attachBaseContext(base: Context) {
@@ -42,6 +40,6 @@ class CoffeeTekApplication : DaggerApplication() {
         private var instance: CoffeeTekApplication? = null
 
         @JvmStatic
-        fun get(): CoffeeTekApplication = instance!!
+        fun getInstance(): CoffeeTekApplication = instance!!
     }
 }

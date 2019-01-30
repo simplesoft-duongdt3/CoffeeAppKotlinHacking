@@ -43,11 +43,13 @@ dependencies {
     testImplementation testDependencies.robolectric
 
     implementation project(path: ':domain')
+    implementation project(path: ':location')
     api project(path: ':data')
 
     implementation presentationDependencies.recyclerView
     implementation presentationDependencies.design
     implementation presentationDependencies.appCompat
+    implementation presentationDependencies.appSupportV13
     implementation presentationDependencies.cardView
     implementation presentationDependencies.contraintLayout
     implementation presentationDependencies.multidex

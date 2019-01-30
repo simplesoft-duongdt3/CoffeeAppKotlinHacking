@@ -1,4 +1,4 @@
-package com.coffeetek.todo.feature.metadata
+package com.coffeetek.todo.managners.metadata
 
 import com.huynh.xinh.domain.models.MetaData
 
@@ -8,5 +8,5 @@ import com.huynh.xinh.domain.models.MetaData
 interface IMetaDataManager {
     fun setMetaData(metadata: MetaData)
 
-    fun getMetaData(): MetaData
+    fun getMetaData(): MetaData?
 }

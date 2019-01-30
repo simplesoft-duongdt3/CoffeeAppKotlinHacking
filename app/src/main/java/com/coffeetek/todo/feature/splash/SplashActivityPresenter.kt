@@ -1,7 +1,7 @@
 package com.coffeetek.todo.feature.splash
 
 import com.coffeetek.todo.base.presenter.BasePresenter
-import com.coffeetek.todo.feature.metadata.IMetaDataManager
+import com.coffeetek.todo.managners.metadata.IMetaDataManager
 import com.huynh.xinh.domain.interactor.OutputObserver
 import com.huynh.xinh.domain.interactor.flash.GetMetaData
 import com.huynh.xinh.domain.models.MetaData
@@ -21,10 +21,10 @@ class SplashActivityPresenter
 
     override fun loadMetaData() {
         getMetaData.execute(object : OutputObserver<MetaData>() {
-            override fun onNext(metaData: MetaData) {
-                super.onNext(metaData)
+            override fun onNext(resutl: MetaData) {
+                super.onNext(resutl)
 
-                metaDataManager.setMetaData(metaData)
+                metaDataManager.setMetaData(resutl)
 
                 getView()?.gotoMainScreen()
             }

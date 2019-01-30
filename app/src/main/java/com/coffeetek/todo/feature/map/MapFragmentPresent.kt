@@ -1,7 +1,7 @@
 package com.coffeetek.todo.feature.map
 
 import com.coffeetek.todo.base.presenter.BasePresenter
-import com.coffeetek.todo.feature.metadata.IMetaDataManager
+import com.coffeetek.todo.managners.metadata.IMetaDataManager
 import com.huynh.xinh.domain.models.Category
 import com.huynh.xinh.domain.models.Store
 import javax.inject.Inject
@@ -42,7 +42,7 @@ class MapFragmentPresent
     }
 
     private fun getNearestStores(): List<Store> {
-        val categories: List<Category> = metaDataManager.getMetaData().categories ?: emptyList()
+        val categories: List<Category> = metaDataManager.getMetaData()?.categories ?: emptyList()
         if (categories.isNotEmpty()) {
             mapPresenterViewModel.stores = categories[0].stores ?: emptyList()
 

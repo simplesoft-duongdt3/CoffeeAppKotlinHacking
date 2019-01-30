@@ -5,8 +5,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.coffeetek.todo.CoffeeTekApplication
 import com.coffeetek.todo.UiThread
-import com.coffeetek.todo.feature.metadata.IMetaDataManager
-import com.coffeetek.todo.feature.metadata.MetaDataManager
+import com.coffeetek.todo.managners.metadata.IMetaDataManager
+import com.coffeetek.todo.managners.metadata.MetaDataManager
 import com.huynh.xinh.data.executor.JobExecutor
 import com.huynh.xinh.domain.executor.PostExecutionThread
 import com.huynh.xinh.domain.executor.ThreadExecutor

@@ -55,6 +55,7 @@ configurations.all {
 dependencies {
     def dataDependencies = rootProject.ext.dataDependencies
     def testDependencies = rootProject.ext.dataTestDependencies
+    def locationDependencies = rootProject.ext.locationDependencies
     def globalDependencies = rootProject.ext.globalDependencies
 
     testImplementation testDependencies.junit
@@ -63,14 +64,8 @@ dependencies {
     testImplementation testDependencies.robolectric
 
     api project(path: ':domain')
-    api project(path: ':location')
 
     api dataDependencies.javaxInject
-    api dataDependencies.retrofit
-    api dataDependencies.retrofitConverterGson
-    api dataDependencies.retrofitAdapterRxJava
-    api dataDependencies.loggingInterceptor
-    api dataDependencies.gson
 
     api dataDependencies.rxKotlin
     api dataDependencies.kotlin
@@ -78,12 +73,11 @@ dependencies {
     api dataDependencies.rxAndroid
     api dataDependencies.androidAnnotations
 
-    api dataDependencies.roomRuntime
-    annotationProcessor dataDependencies.roomCompiler
-    api dataDependencies.roomRxJava2
-
     api globalDependencies.mapstruct
     kapt globalDependencies.mapstructProcessor
+
+
+    api locationDependencies.googleLocation
 
     androidTestImplementation testDependencies.roomTestCoreTesting
     androidTestImplementation testDependencies.roomTestRuntime

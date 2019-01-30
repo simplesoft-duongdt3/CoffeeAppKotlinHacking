@@ -1,4 +1,4 @@
-package com.coffeetek.todo.feature.metadata
+package com.coffeetek.todo.managners.metadata
 
 import com.huynh.xinh.domain.models.MetaData
 import javax.inject.Inject
@@ -9,7 +9,7 @@ import javax.inject.Singleton
  */
 @Singleton
 class MetaDataManager @Inject constructor() : IMetaDataManager {
-    private lateinit var metadata: MetaData
+    private var metadata: MetaData? = null
 
     companion object {
         val instance = MetaDataManager()
@@ -19,7 +19,7 @@ class MetaDataManager @Inject constructor() : IMetaDataManager {
         this.metadata = metadata
     }
 
-    override fun getMetaData(): MetaData {
+    override fun getMetaData(): MetaData? {
         return this.metadata
     }
 
