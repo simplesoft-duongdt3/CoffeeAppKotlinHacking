@@ -83,7 +83,7 @@ class NetworkModule {
 
     companion object {
         private const val CACHE_SIZE = (10 * 1024 * 1024).toLong() // 10 M
-        private const val BASE_URL = "https://moneyforwardvietnam.github.io"
+        private const val BASE_URL = "https://gist.githubusercontent.com/HuynhXinh/"
     }
 
 }

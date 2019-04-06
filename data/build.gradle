@@ -63,6 +63,7 @@ dependencies {
     testImplementation testDependencies.robolectric
 
     api project(path: ':domain')
+    api project(path: ':location')
 
     api dataDependencies.javaxInject
     api dataDependencies.retrofit

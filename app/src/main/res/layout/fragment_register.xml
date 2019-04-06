@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:background="@android:color/white"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBarFragmentRegister"
+            style="@style/CustomToolbar">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ivFragmentRegisterBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="@dimen/all_padding_10dp"
+                android:minWidth="?attr/actionBarSize"
+                android:minHeight="?attr/actionBarSize"
+                app:srcCompat="@drawable/all_ic_back_24dp"/>
+
+        <TextView
+                style="@style/ToolbarTitle"
+                android:layout_marginEnd="?attr/actionBarSize"
+                android:text="@string/all_register"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/all_margin_20dp"
+            android:layout_marginEnd="@dimen/all_margin_20dp"
+            android:layout_marginTop="@dimen/all_margin_30dp">
+
+        <TextView
+                android:id="@+id/tvFragmentRegisterWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size_32sp"
+                android:text="@string/fragment_register_welcome"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutFragmentRegisterEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/all_margin_30dp"
+                android:gravity="center"
+                android:theme="@style/TextInputLayoutAppearance"
+                app:layout_constraintTop_toBottomOf="@id/tvFragmentRegisterWelcome">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtFragmentRegisterEmail"
+                    style="@style/TextInputEditText"
+                    android:hint="@string/all_hint_email"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutFragmentRegisterPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/all_margin_20dp"
+                android:gravity="center"
+                android:theme="@style/TextInputLayoutAppearance"
+                style="@style/TextInputLayoutPassword"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayoutFragmentRegisterEmail">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtFragmentRegisterPassword"
+                    style="@style/TextInputEditText"
+                    android:inputType="textPassword"
+                    android:hint="@string/all_hint_password"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayoutFragmentRegisterRePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/all_margin_20dp"
+                android:gravity="center"
+                android:theme="@style/TextInputLayoutAppearance"
+                style="@style/TextInputLayoutPassword"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayoutFragmentRegisterPassword">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtFragmentRegisterRePassword"
+                    style="@style/TextInputEditText"
+                    android:inputType="textPassword"
+                    android:hint="@string/all_hint_re_password"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+                android:id="@+id/tvFragmentRegisterBtnSignUp"
+                style="@style/ButtonDefault.Semibold.Fill"
+                android:layout_marginTop="@dimen/all_margin_40dp"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayoutFragmentRegisterRePassword"
+                android:text="@string/all_sign_up"/>
+
+        <TextView
+                android:id="@+id/tvFragmentRegisterLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/all_margin_10dp"
+                android:textSize="@dimen/text_size_14sp"
+                android:textColor="#4B5461"
+                app:layout_constraintTop_toBottomOf="@id/tvFragmentRegisterBtnSignUp"
+                android:text="@string/fragment_register_have_an_account_login"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

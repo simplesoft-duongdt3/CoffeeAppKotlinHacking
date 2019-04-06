@@ -28,6 +28,10 @@ android {
     }
 }
 
+androidExtensions {
+    experimental = true
+}
+
 dependencies {
     def presentationDependencies = rootProject.ext.presentationDependencies
     def globalDependencies = rootProject.ext.globalDependencies
@@ -39,14 +43,18 @@ dependencies {
     testImplementation testDependencies.robolectric
 
     implementation project(path: ':domain')
+    implementation project(path: ':location')
     api project(path: ':data')
 
     implementation presentationDependencies.recyclerView
     implementation presentationDependencies.design
     implementation presentationDependencies.appCompat
+    implementation presentationDependencies.appSupportV13
     implementation presentationDependencies.cardView
     implementation presentationDependencies.contraintLayout
     implementation presentationDependencies.multidex
+
+    implementation presentationDependencies.googleMap
 
     implementation presentationDependencies.rxKotlin
     implementation presentationDependencies.rxAndroid
@@ -63,4 +71,6 @@ dependencies {
 
     implementation globalDependencies.mapstruct
     kapt globalDependencies.mapstructProcessor
+
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
 }

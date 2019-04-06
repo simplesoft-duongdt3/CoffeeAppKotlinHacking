@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/all_padding_20dp"
+        android:paddingTop="@dimen/all_padding_5dp"
+        android:paddingRight="@dimen/all_padding_20dp">
+
+    <View
+            android:id="@+id/view_bottom_sheet_fragment_map_drag"
+            android:layout_width="36dp"
+            android:layout_height="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bg_bottom_sheet_drag"/>
+
+    <TextView
+            android:id="@+id/tvBottomSheetMapStoreName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextDefault.Pro.Semibold"
+            android:textColor="@color/color_bottom_sheet_map"
+            android:textSize="@dimen/text_size_20sp"
+            android:layout_marginTop="@dimen/all_margin_10dp"
+            app:layout_constraintTop_toBottomOf="@id/view_bottom_sheet_fragment_map_drag"
+            tools:text="Starbucks"/>
+
+    <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivBottomSheetFragmentMapDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/all_margin_10dp"
+            app:layout_constraintTop_toBottomOf="@id/tvBottomSheetMapStoreName"
+            app:srcCompat="@drawable/ic_distance"/>
+
+    <TextView
+            android:id="@+id/tvBottomSheetFragmentMapDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextDefault.Pro.Regular"
+            android:textColor="@color/color_text_bottom_sheet_map"
+            android:layout_marginStart="@dimen/all_margin_5dp"
+            android:textSize="@dimen/text_size_15sp"
+            app:layout_constraintStart_toEndOf="@id/ivBottomSheetFragmentMapDistance"
+            app:layout_constraintTop_toTopOf="@id/ivBottomSheetFragmentMapDistance"
+            app:layout_constraintBottom_toBottomOf="@id/ivBottomSheetFragmentMapDistance"
+            tools:text="4,32 mi"/>
+
+    <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivBottomSheetFragmentMapTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/all_margin_30dp"
+            app:layout_constraintStart_toEndOf="@id/tvBottomSheetFragmentMapDistance"
+            app:layout_constraintTop_toTopOf="@id/ivBottomSheetFragmentMapDistance"
+            app:layout_constraintBottom_toBottomOf="@id/ivBottomSheetFragmentMapDistance"
+            app:srcCompat="@drawable/ic_time"/>
+
+    <TextView
+            android:id="@+id/tvBottomSheetFragmentMapTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextDefault.Pro.Regular"
+            android:textColor="@color/color_text_bottom_sheet_map"
+            android:layout_marginStart="@dimen/all_margin_5dp"
+            android:textSize="@dimen/text_size_15sp"
+            app:layout_constraintStart_toEndOf="@id/ivBottomSheetFragmentMapTime"
+            app:layout_constraintTop_toTopOf="@id/ivBottomSheetFragmentMapTime"
+            app:layout_constraintBottom_toBottomOf="@id/ivBottomSheetFragmentMapTime"
+            tools:text="4,32 mi"/>
+
+    <TextView
+            android:id="@+id/tvBottomSheetFragmentMapBtnViewMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextDefault.Semibold"
+            android:layout_margin="@dimen/all_margin_30dp"
+            android:minHeight="@dimen/all_min_height_50dp"
+            android:gravity="center"
+            android:background="@drawable/bg_bottom_sheet_btn_view_menu"
+            android:textColor="@android:color/white"
+            android:text="@string/bottom_sheet_fragment_map_view_menu"
+            app:layout_constraintTop_toBottomOf="@id/tvBottomSheetFragmentMapTime"/>
+
+    <TextView
+            android:id="@+id/tvBottomSheetFragmentMapAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextDefault.Pro.Semibold"
+            android:layout_marginTop="@dimen/all_margin_30dp"
+            android:textColor="@color/color_bottom_sheet_map"
+            android:textSize="@dimen/text_size_15sp"
+            android:text="@string/all_address"
+            app:layout_constraintTop_toBottomOf="@id/tvBottomSheetFragmentMapBtnViewMenu"/>
+
+    <TextView
+            android:id="@+id/tvBottomSheetFragmentMapAddressName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextDefault.Pro.Regular"
+            android:textColor="@color/color_bottom_sheet_map"
+            android:textSize="@dimen/text_size_17sp"
+            app:layout_constraintTop_toBottomOf="@id/tvBottomSheetFragmentMapAddress"
+            tools:text="SC VivoCity, 1058 Nguyễn Văn Linh, Tân Phong, Quận 7, Hồ Chí Minh"/>
+
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_min_height_50dp"
+            app:layout_constraintTop_toBottomOf="@id/tvBottomSheetFragmentMapAddressName"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

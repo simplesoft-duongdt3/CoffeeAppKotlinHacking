@@ -26,21 +26,21 @@
             android:layout_margin="@dimen/all_margin_20dp"
             android:textColor="@color/colorPrimaryDark"
             app:layout_constraintTop_toBottomOf="@id/ivFragmentOnBoardingArtwork"
-            android:text="@string/fragment_onboarding_slogans"/>
+            android:text="@string/fragment_on_boarding_slogans"/>
 
     <TextView
             android:id="@+id/tvFragmentOnBoardingRegister"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            style="@style/TextDefault.Semibold"
             android:gravity="center"
-            android:minHeight="@dimen/all_min_height_button"
+            android:minHeight="@dimen/all_min_height_50dp"
             android:layout_marginTop="@dimen/all_margin_20dp"
             android:layout_marginStart="@dimen/all_margin_20dp"
             android:layout_marginEnd="@dimen/all_margin_10dp"
-            android:textSize="@dimen/text_size_14sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/bg_fragment_onboarding_register"
+            android:background="@drawable/all_bg_button"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tvFragmentOnBoardingLogin"
             app:layout_constraintTop_toBottomOf="@id/tvFragmentOnBoardingSlogans"
             android:text="@string/all_register"/>
@@ -49,12 +49,12 @@
             android:id="@+id/tvFragmentOnBoardingLogin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/TextDefault.Semibold"
             android:gravity="center"
-            android:minHeight="@dimen/all_min_height_button"
+            android:minHeight="@dimen/all_min_height_50dp"
             android:layout_marginTop="@dimen/all_margin_20dp"
             android:layout_marginEnd="@dimen/all_margin_20dp"
             android:layout_marginStart="@dimen/all_margin_10dp"
-            android:textSize="@dimen/text_size_14sp"
             android:textColor="@color/colorPrimaryDark"
             android:background="@drawable/bg_fragment_onboarding_login"
             app:layout_constraintStart_toEndOf="@id/tvFragmentOnBoardingRegister"
@@ -66,7 +66,7 @@
             android:id="@+id/rlFragmentOnBoardingBtnFacebook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="@dimen/all_min_height_button"
+            android:minHeight="@dimen/all_min_height_50dp"
             android:layout_margin="@dimen/all_margin_20dp"
             android:gravity="center"
             android:background="@drawable/bg_fragment_onboarding_connect_with_facebook"
@@ -83,10 +83,11 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/TextDefault.Semibold"
                 android:layout_marginStart="@dimen/all_margin_10dp"
                 android:textColor="@color/color_connect_with_facebook"
                 android:layout_toEndOf="@id/ivFragmentOnBoardingIcFacebook"
-                android:text="@string/fragment_onboarding_connect_with_facebook"/>
+                android:text="@string/fragment_on_boarding_connect_with_facebook"/>
 
     </RelativeLayout>
 

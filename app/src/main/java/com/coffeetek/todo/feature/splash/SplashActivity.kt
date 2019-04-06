@@ -32,4 +32,10 @@ class SplashActivity : BaseActivity(), SplashActivityContract.View {
     override fun initEvent() {
         presenter.loadMetaData()
     }
+
+    override fun onDestroy() {
+        presenter.onDestroy()
+
+        super.onDestroy()
+    }
 }

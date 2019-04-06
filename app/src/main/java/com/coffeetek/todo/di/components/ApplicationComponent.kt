@@ -16,7 +16,8 @@ import javax.inject.Singleton
         ApplicationModule::class,
         NetworkModule::class,
         ApiModule::class,
-        RepositoryModule::class]
+        RepositoryModule::class,
+        LocationModule::class]
 )
 interface ApplicationComponent : AndroidInjector<CoffeeTekApplication> {
     @Component.Builder

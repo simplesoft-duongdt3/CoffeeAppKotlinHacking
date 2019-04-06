@@ -1,6 +1,7 @@
 package com.coffeetek.todo.feature.splash
 
 import com.coffeetek.todo.base.presenter.BasePresenter
+import com.coffeetek.todo.managners.metadata.IMetaDataManager
 import com.huynh.xinh.domain.interactor.OutputObserver
 import com.huynh.xinh.domain.interactor.flash.GetMetaData
 import com.huynh.xinh.domain.models.MetaData
@@ -10,13 +11,21 @@ import javax.inject.Inject
  * Create by Mr.X on 12/25/18
  */
 class SplashActivityPresenter
-@Inject constructor(view: SplashActivityContract.View, private val getMetaData: GetMetaData) :
+@Inject constructor(
+    view: SplashActivityContract.View,
+    private val getMetaData: GetMetaData,
+    private val metaDataManager: IMetaDataManager
+) :
     BasePresenter<SplashActivityContract.View>(view, getMetaData),
     SplashActivityContract.Presenter {
+
     override fun loadMetaData() {
         getMetaData.execute(object : OutputObserver<MetaData>() {
-            override fun onNext(t: MetaData) {
-                super.onNext(t)
+            override fun onNext(resutl: MetaData) {
+                super.onNext(resutl)
+
+                metaDataManager.setMetaData(resutl)
+
                 getView()?.gotoMainScreen()
             }
 

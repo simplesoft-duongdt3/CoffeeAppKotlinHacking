@@ -44,6 +44,12 @@
         <item name="colorControlNormal">#D3DFEF</item>
         <item name="colorControlActivated">#C28E79</item>
         <item name="colorControlHighlight">#C28E79</item>
+        <item name="fontPath">fonts/SF-Pro-Display-Regular.otf</item>
+    </style>
+
+    <style name="TextInputLayoutPassword">
+        <item name="passwordToggleEnabled">true</item>
+        <item name="passwordToggleTint">#757575</item>
     </style>
 
     <style name="HintText" parent="TextAppearance.Design.Hint">
@@ -59,10 +65,57 @@
     <style name="TextInputEditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#24272B</item>
         <item name="android:textColorHint">#4B5461</item>
         <item name="android:minHeight">@dimen/all_min_height_60dp</item>
         <item name="android:textSize">@dimen/text_size_18sp</item>
         <item name="android:singleLine">true</item>
+        <item name="fontPath">fonts/SF-Pro-Display-Regular.otf</item>
+    </style>
+
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog"/>
+
+    <style name="TextDefault">
+        <item name="fontPath">fonts/SF-UI-Display-Medium.otf</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+    </style>
+
+    <style name="TextDefault.Semibold" parent="TextDefault">
+        <item name="fontPath">fonts/SF-UI-Display-Semibold.otf</item>
+    </style>
+
+    <style name="TextDefault.Regular" parent="TextDefault">
+        <item name="fontPath">fonts/SF-UI-Display-Regular.otf</item>
+    </style>
+
+    <style name="TextDefault.Pro.Semibold" parent="TextDefault">
+        <item name="fontPath">fonts/SF-Pro-Display-Semibold.otf</item>
+    </style>
+
+    <style name="TextDefault.Pro.Regular" parent="TextDefault">
+        <item name="fontPath">fonts/SF-Pro-Display-Regular.otf</item>
+    </style>
+
+    <style name="ButtonDefault">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/all_min_height_50dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ButtonDefault.Semibold.Fill" parent="ButtonDefault">
+        <item name="android:background">@drawable/all_bg_button</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="fontPath">fonts/SF-UI-Display-Semibold.otf</item>
     </style>
 
 </resources>
