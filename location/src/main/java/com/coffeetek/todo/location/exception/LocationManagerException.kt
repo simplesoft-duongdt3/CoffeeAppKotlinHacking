@@ -1,4 +1,4 @@
-package com.coffeetek.todo.location.rxlocationmanager
+package com.coffeetek.todo.location.exception
 
 import android.location.Location
 

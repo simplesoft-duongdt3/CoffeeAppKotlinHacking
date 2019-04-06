@@ -8,13 +8,13 @@ import com.coffeetek.todo.base.presenter.Contract
 interface MapFragmentContract {
 
     interface View : Contract.IView {
-        fun showMarker(mapViewModels: List<MarkerViewModel>)
-        fun showStoreInfo(storeViewModel: StoreViewModel)
+        fun showMarkers(mapViewModels: List<MarkerViewModel>)
+        fun selectMarker(storeViewModel: StoreViewModel)
     }
 
     interface Presenter : Contract.IPresenter<View> {
-        fun renderMarker()
+        fun onMapViewReady()
 
-        fun getStoreInfo(markerViewModel: MarkerViewModel)
+        fun onMarkerClicked(markerViewModel: MarkerViewModel)
     }
 }

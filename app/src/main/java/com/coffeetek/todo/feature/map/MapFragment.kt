@@ -14,7 +14,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import javax.inject.Inject
 
-
 /**
  * Create by Mr.X on 1/13/19
  */
@@ -33,10 +32,6 @@ class MapFragment : BaseFragment(), MapFragmentContract.View, OnMapReadyCallback
             fragment.arguments = args
             return fragment
         }
-    }
-
-    override fun showStoreInfo(storeViewModel: StoreViewModel) {
-        BottomSheetStoreInfo.newInstance(storeViewModel).show(childFragmentManager, "BottomSheetStoreInfo")
     }
 
     override val contentView: Int
@@ -60,7 +55,7 @@ class MapFragment : BaseFragment(), MapFragmentContract.View, OnMapReadyCallback
 
         this.googleMap?.setOnMarkerClickListener(this)
 
-        presenter.renderMarker()
+        presenter.onMapViewReady()
     }
 
     override fun onMarkerClick(marker: Marker?): Boolean {
@@ -69,9 +64,13 @@ class MapFragment : BaseFragment(), MapFragmentContract.View, OnMapReadyCallback
 
         prevMarker = marker
 
-        presenter.getStoreInfo(marker?.tag as MarkerViewModel)
+        presenter.onMarkerClicked(marker?.tag as MarkerViewModel)
 
         return true
+    }
+
+    override fun selectMarker(storeViewModel: StoreViewModel) {
+        BottomSheetStoreInfo.newInstance(storeViewModel).show(childFragmentManager, "BottomSheetStoreInfo")
     }
 
     private fun selectedMarker(marker: Marker?) {
@@ -88,7 +87,7 @@ class MapFragment : BaseFragment(), MapFragmentContract.View, OnMapReadyCallback
         marker.setIcon(createIconMarker(markerViewModel.iconMarker))
     }
 
-    override fun showMarker(mapViewModels: List<MarkerViewModel>) {
+    override fun showMarkers(mapViewModels: List<MarkerViewModel>) {
         googleMap?.clear()
 
         mapViewModels.forEach { addMarker(it) }

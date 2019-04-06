@@ -9,8 +9,7 @@ import io.reactivex.Single
 import java.util.*
 import javax.inject.Inject
 
-
-class RxGeoCodeLocationImpl @Inject constructor(val context: Context) : RxGeoCodeLocation {
+class RxGeoCodeLocationImpl @Inject constructor(private val context: Context) : RxGeoCodeLocation {
     override fun reverseGeocodeLocation(location: Location, maxResult: Int): Single<List<GeoAddress>> {
         return Single.defer {
             val geoAddresses = createGeocoder().getFromLocation(location.lat, location.lng, maxResult)

@@ -12,11 +12,11 @@ import dagger.Module
 @Module
 abstract class RepositoryModule {
     @Binds
-    internal abstract fun provideFlashRepository(impl: SplashRepositoryImpl): FlashRepository
+    internal abstract fun provideFlashRepository(splashRepositoryImpl: SplashRepositoryImpl): FlashRepository
 
     @Binds
-    internal abstract fun provideUserRepository(impl: UserRepositoryImpl): UserRepository
+    internal abstract fun provideUserRepository(userRepositoryImpl: UserRepositoryImpl): UserRepository
 
     @Binds
-    internal abstract fun provideLocationRepository(impl: LocationRepositoryImpl): LocationRepository
+    internal abstract fun provideLocationRepository(locationRepositoryImpl: LocationRepositoryImpl): LocationRepository
 }

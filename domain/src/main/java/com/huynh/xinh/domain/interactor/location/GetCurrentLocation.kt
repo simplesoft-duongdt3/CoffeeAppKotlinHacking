@@ -13,7 +13,8 @@ import javax.inject.Inject
  */
 class GetCurrentLocation
 @Inject constructor(
-    threadExecutor: ThreadExecutor, postExecutionThread: PostExecutionThread,
+    threadExecutor: ThreadExecutor,
+    postExecutionThread: PostExecutionThread,
     private val repository: LocationRepository
 ) : UseCase<GeoAddress, Void>(threadExecutor, postExecutionThread) {
 

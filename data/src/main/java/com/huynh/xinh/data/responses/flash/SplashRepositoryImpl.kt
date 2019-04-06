@@ -10,8 +10,7 @@ import javax.inject.Inject
 /**
  * Create by Mr.X on 12/25/18
  */
-class SplashRepositoryImpl
-@Inject constructor(private val splashApi: SplashApi) : FlashRepository {
+class SplashRepositoryImpl @Inject constructor(private val splashApi: SplashApi) : FlashRepository {
 
     override fun getMetaData(): Observable<MetaData> {
         return splashApi.getMetaData.map { metadataDto ->

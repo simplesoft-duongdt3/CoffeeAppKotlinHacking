@@ -3,12 +3,14 @@ package com.coffeetek.todo.di.modules
 import android.app.Application
 import android.content.Context
 import android.location.LocationManager
-import com.coffeetek.todo.location.RxLocation
 import com.coffeetek.todo.location.geocode.RxGeoCodeLocation
 import com.coffeetek.todo.location.geocode.RxGeoCodeLocationImpl
-import com.coffeetek.todo.location.googleapi.RxFusedLocationImpl
+import com.coffeetek.todo.location.rxfusedlocation.RxFusedLocation
+import com.coffeetek.todo.location.rxfusedlocation.RxFusedLocationImpl
 import com.coffeetek.todo.location.rxlocationmanager.RxLocationManager
 import com.coffeetek.todo.location.rxlocationmanager.RxLocationManagerImpl
+import com.coffeetek.todo.location.settinglocaiton.SettingLocationChecker
+import com.coffeetek.todo.location.settinglocaiton.SettingLocationCheckerImpl
 import com.coffeetek.todo.managners.location.MyLocationManager
 import com.coffeetek.todo.managners.location.MyLocationManagerImpl
 import dagger.Module
@@ -22,31 +24,37 @@ import javax.inject.Singleton
 class LocationModule {
     @Provides
     @Singleton
-    fun getLocationManager(context: Application): LocationManager {
+    fun provideLocationManager(context: Application): LocationManager {
         return context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
     }
 
     @Provides
     @Singleton
-    fun getRxLocationManager(locationManager: LocationManager): RxLocationManager {
+    fun provideRxLocationManager(locationManager: LocationManager): RxLocationManager {
         return RxLocationManagerImpl(locationManager)
     }
 
     @Provides
     @Singleton
-    fun getRxLocation(context: Application): RxLocation {
+    fun provideRxLocation(context: Application): RxFusedLocation {
         return RxFusedLocationImpl(context)
     }
 
     @Provides
     @Singleton
-    fun getGeoCodeLocation(context: Application): RxGeoCodeLocation {
+    fun provideGeoCodeLocation(context: Application): RxGeoCodeLocation {
         return RxGeoCodeLocationImpl(context)
     }
 
     @Provides
     @Singleton
-    fun getMyLocationManager(): MyLocationManager {
+    fun provideSettingLoctionChecker(context: Application): SettingLocationChecker {
+        return SettingLocationCheckerImpl(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMyLocationManager(): MyLocationManager {
         return MyLocationManagerImpl.instance
     }
 }

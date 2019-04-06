@@ -9,8 +9,7 @@ import javax.inject.Inject
 /**
  * Create by Mr.X on 1/20/19
  */
-class MapFragmentPresent
-@Inject constructor(
+class MapFragmentPresent @Inject constructor(
     view: MapFragmentContract.View,
     private val metaDataManager: IMetaDataManager
 ) :
@@ -18,7 +17,7 @@ class MapFragmentPresent
 
     private val mapPresenterViewModel = MapPresenterViewModel()
 
-    override fun getStoreInfo(markerViewModel: MarkerViewModel) {
+    override fun onMarkerClicked(markerViewModel: MarkerViewModel) {
         val id = markerViewModel.id ?: 0
 
         val store = getStoreById(1)
@@ -30,15 +29,15 @@ class MapFragmentPresent
 
         val storeViewModel = StoreViewModel(id, name, mockMinDistance, mockMinTime, addressName)
 
-        getView()?.showStoreInfo(storeViewModel)
+        getView()?.selectMarker(storeViewModel)
     }
 
     private fun getStoreById(id: Long): Store? {
         return mapPresenterViewModel.stores?.find { it.id == id }
     }
 
-    override fun renderMarker() {
-        getView()?.showMarker(MapFragmentMapper.toMapViewModels(getNearestStores()))
+    override fun onMapViewReady() {
+        getView()?.showMarkers(MapFragmentMapper.toMapViewModels(getNearestStores()))
     }
 
     private fun getNearestStores(): List<Store> {

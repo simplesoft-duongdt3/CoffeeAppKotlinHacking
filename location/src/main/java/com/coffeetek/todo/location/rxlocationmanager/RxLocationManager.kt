@@ -1,13 +1,12 @@
 package com.coffeetek.todo.location.rxlocationmanager
 
-import com.coffeetek.todo.location.RxLocation
 import com.huynh.xinh.domain.models.Location
 import com.huynh.xinh.domain.repositories.location.CurrentLocationParam
 import io.reactivex.Maybe
+import io.reactivex.Single
 
-/**
- * Create by Mr.X on 1/28/19
- */
-interface RxLocationManager : RxLocation {
+interface RxLocationManager {
+    fun getCurrentLocation(param: CurrentLocationParam): Single<Location>
+
     fun getLastLocation(param: CurrentLocationParam): Maybe<Location>
 }
